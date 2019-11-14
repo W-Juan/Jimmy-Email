@@ -1,0 +1,59 @@
+<div class="writeEmail col-md-10 col-sm-12 col-xs-12">
+            <form action="" class="layui-form form-horizontal" name="angularForm">
+                  <div class="layui-form-item">
+                        <label class="layui-form-label">发件人</label>
+                        <div class="col-md-10 col-sm-10 col-xs-10">
+                              <input type="tel"  autocomplete="off" class="form-control" ng-model="user"  disabled>
+                        </div>
+                  </div>
+                  <div class="layui-form-item " >
+                        <label class="layui-form-label">收件人</label>
+                        <div class="col-md-10 col-sm-10 col-xs-10">
+                              <input type="text"  lay-verify="email" class="form-control" value="{{ friendEmail }}" ng-model="friendEmail" ng-required name="receiver" autofocus>
+                        </div>
+                  </div>
+                  <div class="layui-form-item " >
+                        <label class="layui-form-label"></label>
+                        <div class="col-md-10 col-sm-10 col-xs-10">
+                              <a href="" class="" ng-click="cc=true">添加抄送</a>
+
+                              <a href="" class="" ng-click="bcc=true">添加密送</a>
+                        </div>
+                  </div>
+                  <div class="layui-form-item " ng-if="cc" ng-click="addCC=false">
+                        <label class="layui-form-label">抄送</label>
+                        <div class="col-md-10 col-sm-10 col-xs-10">
+                              <input type="text"  lay-verify="email" class="form-control">
+                        </div>
+                  </div>
+                  <div class="layui-form-item " ng-if="bcc" ng-click="addBcc=false">
+                        <label class="layui-form-label">密送</label>
+                        <div class="col-md-10 col-sm-10 col-xs-10">
+                              <input type="tel"  lay-verify="email" class="form-control"  >
+                        </div>
+                  </div>
+                  <div class="layui-form-item">
+                        <label class="layui-form-label">主 题</label>
+                        <div class="col-md-10 col-sm-10 col-xs-10">
+                              <input type="tel" autocomplete="off" class="form-control" ng-model="sendTitle" name="title">
+                        </div>
+                  </div>
+                  <div class="layui-form-item ">
+                        <label class="layui-form-label" >正文</label>
+                        <div class=" col-md-10 col-sm-10 col-xs-10">
+                              <textarea id="demo" style="display: none;"></textarea>
+                        </div>
+                  </div>
+                  <div class="layui-form-item">
+                        <div class="layui-input-block">
+                              <a ng-href="{{ href }}" class="layui-btn" ng-click="send()">立即发送</a>
+                        </div>
+                  </div>
+            </form>
+      </div>
+<script>
+      layui.use('layedit', function(){
+            var layedit = layui.layedit;
+            layedit.build('demo'); //建立编辑器
+      });
+</script>

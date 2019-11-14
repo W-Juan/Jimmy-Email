@@ -1,0 +1,47 @@
+<div class="inbox">
+    <div class="contentContainer">
+        <p>>> 收件箱(共 <span class="emailNum">{{ num }}</span> 封)</p>
+    </div>
+    <div class="opt">
+        <p class="contentContainer">
+            <button type="button" class="optBtn btn btn-default" ng-click="deleteEmail()">删除</button>
+            <button type="button" class="optBtn btn btn-default" ng-click="deleteEmail()">彻底删除</button>
+            <button type="button" class="optBtn btn btn-default">举报</button>
+            <button type="button" class="optBtn btn btn-default">转发</button>
+            <button type="button" class="optBtn btn btn-default">全部标为已读</button>
+        </p>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-hover">
+                <thead>
+                <tr>
+                    <td><input type="checkbox" class="tableCheck" ng-model="checkAll" ng-change="selectAll()"></td>
+                    <td><span class="iconfont">&#xe626;</span></td>
+                    <td >发件人</td>
+                    <td>主题</td>
+                    <td>收件时间</td>
+                    <td>回复</td>
+                </tr>
+                </thead>
+                <tr ng-repeat="email in showArr" ng-class="{checked:email.selected}">
+                    <td><input type="checkbox" class="tableCheck" ng-model="email.selected" ng-change="checkChange(email.selected)"></td>
+                    <td><span class="iconfont">&#xe626;</span></td>
+                    <td>{{ email.personName }}</td>
+                    <td><a href="#/emailDetail{{ email }}" class="emailTitle">{{ email.title }}</a></td>
+                    <td>{{ email.date | date:'yyyy-MM-dd HH:mm:ss' }}</td>
+                    <td><a href="#/writeEmail{{ email.email }}">回复</a></td>
+                </tr>
+            </table>
+    </div>
+    <div class="pagBtnDiv">
+        <button class="btn btn-default" type="button" ng-click="prePage()" ng-disabled="preDisabled">prev</button>
+        <button class="btn btn-default pageBtn" type="button" ng-class="{clickBtn:x.active}" ng-repeat="x in numArr" ng-click="changePage(x)">{{ x.num }}</button>
+        <button class="btn btn-default" type="button" ng-click="nextPage()" ng-disabled="nextDisabled">next</button>
+    </div>
+    <div class="content">
+        <div class="pagination-holder clearfix">
+            <div id="light-pagination" class="pagination"></div>
+        </div>
+    </div>
+    <p ng-if=" !inboxArr.length " class="tips">未收到任何邮件！</p>
+</div>

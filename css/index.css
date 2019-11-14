@@ -1,0 +1,115 @@
+body { background: url("../image/log_bg1.jpg") 0 -83px no-repeat; background-size: cover; }
+
+.navbar-brand { height: auto; }
+
+.navbar-default { background: none; border: none; }
+
+.navDiv, .content { float: left; }
+
+.content { margin-top: 20px; }
+
+.writeEmail, .contacts, .emailDetail, .outbox, .inbox { background: white; padding: 10px 20px; border-radius: 5px; min-height: 800px; position: relative; }
+
+/*---------commom------------*/
+.relative { position: relative; }
+
+.absolute { position: absolute; }
+
+a:hover, a:focus { text-decoration: none; }
+
+/*--------nav--------------*/
+.accordion .link { text-align: center; }
+
+/*-------email detail------------*/
+.contentContainer { margin: 15px 0; }
+
+.emailContent { border: 1px solid lightgray; border-radius: 5px; text-indent: 2em; padding: 15px 0; }
+
+.fastReplyInput { margin-left: 40px; }
+
+.fastReplyText .layui-input-block, .emailContent { margin-left: 55px; }
+
+h1, h2, h3, h4, h5, h6 { font-weight: bold; }
+
+/*----------inbox----------*/
+.inbox td { padding: 10px; }
+
+.inbox .tableCheck { margin: 5px 0 5px 20px; }
+
+.inbox table { border: 1px solid lightgray; }
+
+.emailNum { font-weight: bold; color: red; }
+
+.emailTitle:hover { text-decoration: underline; color: dodgerblue; }
+
+.infoTitle { white-space: pre; }
+
+.tips { padding: 20px 0; text-align: center; font-size: 18px; }
+
+.pageBtn { margin: 0 5px; }
+
+.pagBtnDiv { position: absolute; bottom: 100px; left: 50px; }
+
+/*---------write----------*/
+.writeEmail .layui-input-block { margin-left: 95px; }
+
+.sendBtn, .clickBtn { background: #1aa094; border: none; color: white; }
+
+.sendBtn:active, .sendBtn:hover, .clickBtn:active, .clickBtn:hover, .clickBtn:focus { background: #1aa094; color: white; border: none; outline: none; }
+
+.btn-default:focus, .btn-default:active, .btn-default:active:focus { outline: none; }
+
+.sendSuccess { text-align: center; padding: 20px 0 10px 0; }
+
+/*------------friend list----------------*/
+.contacts table tr td { padding: 3px; }
+
+.contacts .tdContent { margin-top: 30px; }
+
+.contacts .tableCheck { margin-left: 20px; }
+
+.checked { background: #fff6ed; }
+
+.contacts table .friendTr:hover { background: #fff6ed; cursor: pointer; }
+
+/*headImg*/
+.friendList img { width: 85px; margin-left: 50px; border-radius: 50%; }
+
+.searchContainer input { text-indent: 2em; margin: 10px 0; }
+
+/*signature*/
+.signature { font-size: 12px; color: gray; font-weight: normal; }
+
+.signName span, .signName p { margin: 10px 0px; }
+
+/*search icon*/
+.searchContainer span { position: absolute; top: 24px; left: 15px; color: #a4aead; z-index: 99; }
+
+/*-----------friend detail---------------*/
+detail img { width: 80px; border-radius: 50%; margin-left: 15px; }
+
+.detailUl { padding-left: 0px; }
+
+.detailUl li:not(.firstLi) { border: none; }
+
+#myModal .close { font-size: 35px; }
+
+#myModal .close:focus { outline: none; }
+
+.modal-body { padding-top: 0px; }
+
+#myModal li { padding: 10px 20px; }
+
+detail .infoTitle { font-size: 16px; color: #929292; }
+
+/*--------media-------*/
+.modal-title { font-size: 16px; color: black; font-weight: bold; margin-left: 10px; }
+
+@media (min-width: 768px) { .navbar-header { float: none; }
+  .sectionDiv .navbar-collapse { width: 100%; }
+  .modal-dialog { width: 600px; margin: 150px auto; }
+  .accordion { min-height: 800px; } }
+@media (max-width: 768px) { /*.according{ width: 100%; }*/
+  .navDiv { width: 100%; padding: 0 15px; } }
+
+/*# sourceMappingURL=index.css.map */

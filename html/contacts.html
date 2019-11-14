@@ -1,0 +1,38 @@
+<div class="friendList contacts col-md-10">
+    <div class="contentContainer">
+        <p>>> 好友列表(共 <span class="emailNum">{{ friendsNum}}</span> 个好友)</p>
+    </div>
+    <div class="opt" ng-if="friendArr.length">
+        <button type="button" class="optBtn btn btn-default" ng-click="deleteFriends()">删除</button>
+        <button type="button" class="optBtn btn btn-default">举报</button>
+        <button type="button" class="optBtn btn btn-default">标记为特别关心</button>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <td class="searchContainer relative" colspan="5">
+                        <span class="glyphicon glyphicon-search"></span>
+                        <input type="search" class="form-control"  placeholder="Enter you friend's name"  ng-model="searchFriend" ng-keyup="searchNum()" autofocus>
+                    </td>
+                </tr>
+            </thead>
+
+            <tr ng-repeat="friend in friendArr | filterName:searchFriend" data-toggle="modal" data-target="#myModal" ng-click="showDetail(friend)" ng-class="{checked:friend.selected}" class="friendTr">
+                <td><input type="checkbox"  ng-model="friend.selected" class="tdContent tableCheck" ng-click="$event.stopPropagation()" ng-if="friendsNum"></td>
+                <td><img ng-src="{{ friend.headImg }}"></td>
+                <td >
+                    <p class="tdContent" ng-bind="friend.personName" ></p>
+                </td>
+                <td>
+                    <p class="tdContent">签名：{{ friend.signature }}</p>
+                </td>
+                <td><a href="#/writeEmail{{ friend.email }}" class="tdContent btn btn-default " ng-click="$event.stopPropagation()">给Ta发邮件</a></td>
+
+            </tr>
+        </table>
+    </div>
+    <detail friend="friend" ></detail>
+    <p ng-if=" !friendArr.length " class="tips">当前没有好友 ￣へ￣，快去加好友吧！</p>
+</div>
+

@@ -1,0 +1,37 @@
+.navbar-brand { height: auto; }
+
+.navbar-default { background: none; border: none; }
+
+.navDiv, .content { float: left; }
+
+.content { margin-top: 20px; background: white; }
+
+@media (min-width: 768px) { .navbar-header { float: none; } }
+a:hover, a:focus { text-decoration: none; }
+
+/*-------email detail------------*/
+.contentContainer { margin: 10px 0; }
+
+.areaContainer { border: 1px solid red; }
+
+.fastReplyInput { margin-left: 40px; }
+
+.fastReplyText .layui-input-block { margin-left: 55px; }
+
+h1, h2, h3, h4, h5, h6 { font-weight: bold; }
+
+/*----------replay-------------*/
+.layui-input-block { margin-left: 95px; }
+
+/*----------inbox----------*/
+.emailNum { font-weight: bold; color: red; }
+
+.emailTitle:hover { text-decoration: underline; color: dodgerblue; }
+
+.emailContent { text-indent: 4em; }
+
+.infoTitle { white-space: pre; }
+
+.tips { padding: 20px 0; text-align: center; font-size: 18px; }
+
+/*# sourceMappingURL=index.css.map */

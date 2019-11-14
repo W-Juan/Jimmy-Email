@@ -1,0 +1,55 @@
+<script>
+    layui.use('layedit', function(){
+        var layedit = layui.layedit;
+        layedit.build('demo'); //建立编辑器
+    });
+</script>
+<div class="emailDetail col-md-10 col-sm-12 col-xs-12">
+    <div class="contentContainer">
+        <a href="#inbox" class="btn-default btn">返回</a>
+        <a href="#/writeEmail{{ email.email }}" class="btn btn-default">回复</a>
+        <button class="btn btn-default">转发</button>
+        <button class="btn btn-default">删除</button>
+    </div>
+    <div class="areaContainer">
+        <div class="contentContainer">
+            <h4>{{ email.title }}</h4>
+        </div>
+        <div class="contentContainer">
+            <p class="infoTitle" ng-if=" email.email ">发件人 ： {{ email.personName }}&lt;{{ email.email }}&gt;</p>
+            <p class="infoTitle" ng-if=" ! email.email ">收件人 ： {{ email.personName }}</p>
+        </div>
+        <div class="contentContainer">
+            <p class="infoTitle">时    间 ： {{ email.date | date:'yyyy-MM-dd HH:mm:ss' }} </p>
+        </div>
+        <div class="contentContainer">
+            <p class="infoTitle" ng-if="email.email">收件人 ： 自己</p>
+            <p class="infoTitle" ng-if=" ! email.email">发件人 ： 自己</p>
+        </div>
+        <div class="contentContainer ">
+            <p class="infoTitle">正    文 ： </p>
+            <p class="emailContent ">
+                {{ email.content }}
+            </p>
+        </div>
+    </div>
+    <div ng-if="email.email">
+        <form action="" class="layui-form form-horizontal" >
+            <div class="layui-form-item col-md-9" >
+                <input type="tel" ng-if="!visible" class="form-control fastReplyInput" placeholder="快速回复给{{ email.personName }}" ng-focus="fastReply()">
+            </div>
+            <div class="fastReplyText" ng-show="visible">
+                <div class="layui-form-item layui-form-text">
+                    <div class="layui-input-block">
+                        <textarea id="demo" style="display: none;" ng-model="sendContent"></textarea>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <div class="layui-input-block">
+                        <a ng-href="{{ href }}" class="layui-btn" ng-click="sendEmail()">立即发送</a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
